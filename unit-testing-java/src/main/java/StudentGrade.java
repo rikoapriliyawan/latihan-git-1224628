@@ -1,20 +1,25 @@
 public class StudentGrade {
-
-    public String getGrade(int nilai) {
-        if (nilai < 0 || nilai > 100) {
-            throw new IllegalArgumentException("Nilai harus 0-100");
+    public String calculateGrade(int score) {
+        if (score < 0 || score > 100) {
+            throw new IllegalArgumentException("Score must be between 0 and 100");
         }
-
-        if (nilai >= 85) {
+        if (score >= 80) {
             return "A";
-        } else if (nilai >= 75) {
+        } else if (score >= 70) {
             return "B";
-        } else if (nilai >= 60) {
+        } else if (score >= 60) {
             return "C";
-        } else if (nilai >= 50) {
+        } else if (score >= 50) {
             return "D";
         } else {
             return "E";
         }
+    }
+
+    public boolean isPassed(int score) {
+        if (score < 0 || score > 100) {
+            throw new IllegalArgumentException("Score must be between 0 and 100");
+        }
+        return score >= 60;
     }
 }

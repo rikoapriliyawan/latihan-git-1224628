@@ -8,40 +8,40 @@ class StudentGradeTest {
 
     @Test
     void nilai90MendapatGradeA() {
-        assertEquals("A", studentGrade.getGrade(90));
+        assertEquals("A", studentGrade.calculateGrade(90));
     }
 
     @Test
     void nilai80MendapatGradeB() {
-        assertEquals("B", studentGrade.getGrade(80));
+        assertEquals("B", studentGrade.calculateGrade(80));
     }
 
     @Test
     void nilai65MendapatGradeC() {
-        assertEquals("C", studentGrade.getGrade(65));
+        assertEquals("C", studentGrade.calculateGrade(65));
     }
 
     @Test
     void nilai55MendapatGradeD() {
-        assertEquals("D", studentGrade.getGrade(55));
+        assertEquals("D", studentGrade.calculateGrade(55));
     }
 
     @Test
     void nilai40MendapatGradeE() {
-        assertEquals("E", studentGrade.getGrade(40));
+        assertEquals("E", studentGrade.calculateGrade(40));
     }
 
     @Test
     void nilaiDiBawahNolMenghasilkanError() {
         assertThrows(
                 IllegalArgumentException.class,
-                () -> studentGrade.getGrade(-1));
+                () -> studentGrade.calculateGrade(-1));
     }
 
     @Test
     void nilaiDiAtasSeratusMenghasilkanError() {
         assertThrows(
                 IllegalArgumentException.class,
-                () -> studentGrade.getGrade(101));
+                () -> studentGrade.calculateGrade(101));
     }
 }
